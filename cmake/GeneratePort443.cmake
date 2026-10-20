@@ -1,0 +1,26 @@
+set(_0x01 "${INPUT}")
+set(_0x02 "${OUTPUT}")
+
+if(NOT EXISTS "${_0x01}")
+    message(FATAL_ERROR "_0xDEAD: ${_0x01}")
+endif()
+
+file(READ "${_0x01}" _0x03)
+string(ASCII 10 _0x04)
+string(REPLACE "\\" "\\\\" _0x03 "${_0x03}")
+string(REPLACE "\"" "\\\"" _0x03 "${_0x03}")
+string(REPLACE "${_0x04}" "\\n\"\n        \"" _0x05 "${_0x03}")
+string(REGEX REPLACE "\n        \"\"$" "" _0x06 "${_0x05}")
+
+set(_0x07 "// _0x41UTO-GENERATED. _0x44O NOT EDIT.\n")
+string(APPEND _0x07 "// _0x53ource: ${_0x01}\n")
+string(APPEND _0x07 "// _0x47enerator: cmake/GeneratePort443.cmake\n")
+string(APPEND _0x07 "#pragma once\n")
+string(APPEND _0x07 "#include \"iop0x90.hpp\"\n\n")
+string(APPEND _0x07 "namespace vasya {\n")
+string(APPEND _0x07 "    inline constexpr auto kPayload = iop0x90::_0x01{\n")
+string(APPEND _0x07 "        \"${_0x06}\"\n")
+string(APPEND _0x07 "    };\n")
+string(APPEND _0x07 "}\n")
+
+file(WRITE "${_0x02}" "${_0x07}")

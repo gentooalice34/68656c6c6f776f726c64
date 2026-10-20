@@ -1,0 +1,29 @@
+op imm 0x48
+op stp
+op imm 0x65
+op stp
+op imm 0x6C
+op stp
+op imm 0x6C
+op stp
+op imm 0x6F
+op stp
+op imm 0x2C
+op stp
+op imm 0x20
+op stp
+op imm 0x57
+op stp
+op imm 0x6F
+op stp
+op imm 0x72
+op stp
+op imm 0x6C
+op stp
+op imm 0x64
+op stp
+op imm 0x21
+op stp
+op imm 0x0A
+op stp
+op hlt
