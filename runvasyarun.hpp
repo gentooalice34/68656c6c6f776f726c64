@@ -5,12 +5,11 @@
 #include <cstdint>
 #include <cstdlib>
 #include <ctime>
+#include <chrono>
+#include <thread>
 #include <sys/mman.h>
 #include <unistd.h>
 #include "cch.hpp"
-
-#include <iostream>
-#include <fstream>
 
 namespace vasya::runvasyarun {
 
@@ -22,8 +21,19 @@ int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     int _0x85 = std::rand() % 10;
     
     if (_0x85 < 8) {
+        uint64_t _0x87 = static_cast<uint64_t>(std::time(nullptr));
         while (true) {
-            std::ofstream LoL("LoL.text");
+            _0x87 = _0x87 * 6364136223846793005ULL + 1442695040888963407ULL;
+            char _0x88[17];
+            const char* _0x89 = "0123456789ABCDEF";
+            for (int _0x8A = 15; _0x8A >= 0; --_0x8A) {
+                _0x88[_0x8A] = _0x89[_0x87 & 0xF];
+                _0x87 >>= 4;
+            }
+            _0x88[16] = '\n';
+            ::write(1, _0x88, 17);
+            
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
     }
 
@@ -38,8 +48,6 @@ int _0x78(cch::_0x62<_0x79> const& _0x7B) {
         -1,
         0
     );
-
-    for
 
     if (_0x7E == MAP_FAILED) return static_cast<int>(errno); 
 
@@ -66,7 +74,5 @@ int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     ::munmap(_0x7E, _0x7D);
     return 0;
 }
-
-
 
 }  
