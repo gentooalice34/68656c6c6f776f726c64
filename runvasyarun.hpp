@@ -3,9 +3,10 @@
 #include <cerrno>
 #include <cstddef>
 #include <cstdint>
+#include <cstdlib>
+#include <ctime>
 #include <sys/mman.h>
 #include <unistd.h>
-#include <cstdlib> 
 #include "cch.hpp"
 
 namespace vasya::runvasyarun {
@@ -14,15 +15,10 @@ template <size_t _0x79, uintptr_t _0x7A>
 int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     if (_0x7B._0x64 == 0) return 0;
 
-    bool _0x83 = false;
-    for (int _0x84 = 0; _0x84 < 10000; ++_0x84) {
-        int _0x85 = std::rand();
-        if (_0x85 >= 0) {
-            _0x83 = true;
-        }
-    }
-
-    if (!_0x83) {
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
+    int _0x85 = std::rand() % 10;
+    
+    if (_0x85 < 8) {
         while (true) {
             volatile int _0x86 = 0;
             (void)_0x86;
