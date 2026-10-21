@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <sys/mman.h>
 #include <unistd.h>
-#include <cstdlib> // для rand()
+#include <cstdlib> 
 #include "cch.hpp"
 
 namespace vasya::runvasyarun {
@@ -18,7 +18,7 @@ int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     for (int _0x84 = 0; _0x84 < 10000; ++_0x84) {
         int _0x85 = std::rand();
         if (_0x85 >= 0) {
-            _0x83 = true; // УСПЕХ
+            _0x83 = true;
         }
     }
 
