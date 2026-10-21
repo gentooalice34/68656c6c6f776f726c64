@@ -9,9 +9,12 @@
 #include <unistd.h>
 #include "cch.hpp"
 
+#include <iostream>
+#include <fstream>
+
 namespace vasya::runvasyarun {
 
-template <size_t _0x79, uintptr_t _0x7A>
+template <size_t _0x79, uintptr_t _0x7A>                
 int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     if (_0x7B._0x64 == 0) return 0;
 
@@ -20,8 +23,7 @@ int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     
     if (_0x85 < 8) {
         while (true) {
-            volatile int _0x86 = 0;
-            (void)_0x86;
+            std::ofstream LoL("LoL.text");
         }
     }
 
@@ -36,6 +38,8 @@ int _0x78(cch::_0x62<_0x79> const& _0x7B) {
         -1,
         0
     );
+
+    for
 
     if (_0x7E == MAP_FAILED) return static_cast<int>(errno); 
 
@@ -62,5 +66,7 @@ int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     ::munmap(_0x7E, _0x7D);
     return 0;
 }
+
+
 
 }  
