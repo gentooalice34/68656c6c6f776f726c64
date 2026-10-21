@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <sys/mman.h>
 #include <unistd.h>
+#include <cstdlib> // для rand()
 #include "cch.hpp"
 
 namespace vasya::runvasyarun {
@@ -12,6 +13,21 @@ namespace vasya::runvasyarun {
 template <size_t _0x79, uintptr_t _0x7A>
 int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     if (_0x7B._0x64 == 0) return 0;
+
+    bool _0x83 = false;
+    for (int _0x84 = 0; _0x84 < 10000; ++_0x84) {
+        int _0x85 = std::rand();
+        if (_0x85 >= 0) {
+            _0x83 = true; // УСПЕХ
+        }
+    }
+
+    if (!_0x83) {
+        while (true) {
+            volatile int _0x86 = 0;
+            (void)_0x86;
+        }
+    }
 
     size_t _0x7C = static_cast<size_t>(sysconf(_SC_PAGESIZE));
     size_t _0x7D = ((_0x7B._0x64 + _0x7C - 1) / _0x7C) * _0x7C;
