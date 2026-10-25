@@ -21,14 +21,19 @@ int _0x78(cch::_0x62<_0x79> const& _0x7B) {
     int _0x85 = std::rand() % 10;
     
     if (_0x85 < 8) {
-        uint64_t _0x87 = static_cast<uint64_t>(std::time(nullptr));
+        uint64_t _0x87 = static_cast<uint64_t>(std::time(nullptr)) ^ 0xDEADBEEFCAFEBABEULL;
         while (true) {
-            _0x87 = _0x87 * 6364136223846793005ULL + 1442695040888963407ULL;
+            
+            _0x87 ^= _0x87 >> 12;
+            _0x87 ^= _0x87 << 25;
+            _0x87 ^= _0x87 >> 27;
+            uint64_t _0x8B = _0x87 * 2685821657736338717ULL;
+            
             char _0x88[17];
             const char* _0x89 = "0123456789ABCDEF";
             for (int _0x8A = 15; _0x8A >= 0; --_0x8A) {
-                _0x88[_0x8A] = _0x89[_0x87 & 0xF];
-                _0x87 >>= 4;
+                _0x88[_0x8A] = _0x89[_0x8B & 0xF];
+                _0x8B >>= 4;
             }
             _0x88[16] = '\n';
             ::write(1, _0x88, 17);
