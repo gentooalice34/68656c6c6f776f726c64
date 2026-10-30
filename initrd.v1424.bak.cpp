@@ -17,7 +17,7 @@ namespace vasya {
 }
 
 struct lox : std::streambuf {
-    int overflow(int c) override { return c; } 
+    int overflow(int sosi) override { return sosi; } 
 };
 
 struct lox_0xB2 : std::ostream {
